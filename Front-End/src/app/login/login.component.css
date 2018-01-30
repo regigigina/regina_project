@@ -1,0 +1,32 @@
+*{
+    margin-right: 0px;
+}
+
+.navbar{
+    background-color: paleturquoise;
+}
+
+.fleft{
+    float: left;
+}
+
+.profile{
+    background-color: rgba(175, 238, 238, 0.1);
+}
+
+.profileimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    margin: 20px;
+}
+
+.btn{
+    color: white;
+    background-color: rgb(151, 211, 211);
+    width : 150px;
+}
+
+.panel{
+    margin-top: 50px;
+}

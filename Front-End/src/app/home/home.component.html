@@ -1,0 +1,124 @@
+<!-- Left Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="float: left;">
+  <nav class="nav flex-column" style="margin-top:33px;">
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/dashboard.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/home">Dashboard</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/calculator.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/expenses">Expenses</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/friends.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/accounts">Friends</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Mid Bar -->
+<div class="col-xs-12 col-md-8 shadow" style="min-height: 100vh; float: left;">
+
+  <!-- Dashboard -->
+  <div class="d-flex flex-row align-items-center bg-gray" style="padding-left: 10px;padding-right: 10px;">      
+    <div class="col-md-1 p-2 d-flex flex-row">
+      <img src="../../assets/icons/dashboard.png" class="bigicon">             
+    </div>
+    <div class="col-md-6 p-2">
+      <h4>Dashboard</h4>
+    </div> 
+    
+    <!-- Add New -->
+    <form #w = "ngForm" (ngSubmit)="addnew(w)" class="ml-auto p-2 d-flex flex-row align-items-center">
+      <div class="form-inline" style="margin-bottom:0px;">
+        <label class="col-md-3 justify-content-start">With</label>
+        <select class="col-md-9 form-control custom-select" name="with" ngModel>
+          <option *ngFor="let u of userList, let i = index" value="{{u._id}}">{{u.username}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Add new</button>        
+    </form>
+
+  </div>    
+
+  <!-- Balance -->
+  <div class="d-flex flex-row bg-gray shadow-top">
+    <div class="col-md-4 p-2 shadow-right centrify">
+      <a>balance</a><br>
+      <a><b>Rp +105.000</b></a>
+    </div>
+    <div class="col-md-4 p-2 shadow-right centrify">
+      <a>you owe</a><br>
+      <a><b>Rp 15.000</b></a>
+    </div>
+    <div class="col-md-4 p-2 centrify">
+      <a>you are owed</a><br>
+      <a><b>Rp 120.000</b></a>
+    </div>
+  </div>       
+
+  <!-- Summary -->
+  <div class="d-flex flex-row" style="padding-left: 5px;padding-right: 5px;">
+    <div class="p-2 col-md-6 d-flex flex-column shadow-right">
+      <div class="p-2">
+        <h4 style="color: rgb(129, 129, 129);">You owe</h4>
+      </div>
+      <div class="p-2 d-flex flex-row shadow-bottom">
+        <div class="p-2">
+          <img class="profileimg align-self-start" src="https://www.techcityng.com/wp-content/uploads/2017/07/jackma.jpg" alt="Your Picture Here">
+        </div>
+        <div class="p-2 d-flex flex-column">
+          <h5>Ma Yun</h5>
+          <h6>you owe Rp 15.000</h6>
+        </div>        
+      </div>
+      <div class="p-2 d-flex flex-row">
+        <img src="../../assets/icons/tag.png" alt="Your Picture Here" class="icon" style="margin-right:7px;">
+        <p>you owe Ma Yun Rp 20.000 for charger from Taobao</p>
+      </div>          
+    </div>
+
+    <div class="p-2 col-md-6 d-flex flex-column shadow-left">
+      <div class="p-2 align-self-end">
+        <h4 style="color: rgb(129, 129, 129);">You are owed</h4>
+      </div>
+      <div style="margin-bottom:20px;">
+        <div class="p-2 d-flex flex-row shadow-bottom">
+          <div class="p-2">
+            <img class="profileimg align-self-start" src="http://bornwiki.com/bio/sergey-brin.jpg" alt="Your Picture Here">
+          </div>
+          <div class="p-2 d-flex flex-column">
+            <h5>Sergey</h5>
+            <h6>owes you Rp 100.000</h6>
+          </div>
+        </div>
+        <div class="p-2 d-flex flex-row">
+          <img src="../../assets/icons/moneybag.png" alt="Your Picture Here" class="icon">
+          <p>Sergey owes you Rp 65.000 for Mujigae</p>
+        </div>
+        <div class="p-2 d-flex flex-row">
+          <img src="../../assets/icons/moneybag.png" alt="Your Picture Here" class="icon">
+          <p>Sergey owes you Rp 35.000 for King Mango</p>
+        </div>
+      </div>
+      <div class="p-2 d-flex flex-row shadow-bottom">
+        <div class="p-2">
+          <img class="profileimg align-self-start" src="https://i.pinimg.com/736x/af/a9/6c/afa96c8bc36174e32b24130c512f4152--kevin-systrom-instagram-ideas.jpg" alt="Your Picture Here">
+        </div>
+        <div class="p-2 d-flex flex-column">
+          <h5>Kevin</h5>
+          <h6>owes you Rp 20.000</h6>
+        </div>
+      </div>
+      <div class="p-2 d-flex flex-row">
+        <img src="../../assets/icons/moneybag.png" alt="Your Picture Here" class="icon">
+        <p>Kevin owes you Rp 20.000 for nasi uduk</p>
+      </div>
+    </div>
+  </div>    
+</div> 
+  
+<!-- Right Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="height: 100vh;  float: left;">
+  
+</div>

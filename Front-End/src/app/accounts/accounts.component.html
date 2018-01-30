@@ -1,0 +1,189 @@
+
+<!-- Left Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="float: left;">
+  <nav class="nav flex-column" style="margin-top:33px;">
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/dashboard.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/home">Dashboard</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/calculator.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/expenses">Expenses</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/friends.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/accounts  ">Friends</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Mid Bar -->
+<div class="col-xs-12 col-md-8 shadow" style="min-height: 100vh; float: left;">
+
+  <!-- User Profile -->
+  <div class="d-flex flex-row align-items-center bg-gray" style="padding-left: 10px;padding-right: 10px;">
+    <div class="p-2">
+      <img class="profileimg align-self-start" src="https://www.techcityng.com/wp-content/uploads/2017/07/jackma.jpg" alt="Your Picture Here">
+    </div>
+    <div class="p-2">
+      <h2>Jack Ma Yun</h2>
+    </div>
+    <div class="ml-auto p-2">
+      <button type="button" class="btn justify-content-end" data-toggle='modal' data-target="#ModNewEvent">Add new</button>
+      <button type="button" class="btn justify-content-end" data-toggle='modal' data-target="#ModNewEvent">Settle</button>
+    </div>
+  </div>      
+
+  <!-- Accounts Table -->
+  <table class="table">
+    <thead class="bg-gray shadow-top">
+      <tr style="text-align:center;">
+        <th class="tdate" scope="col">Date</th>
+        <th class="texpenses" scope="col">Expenses</th>
+        <th class="tfriend" scope="col">Jack</th>
+        <th class="tuser" scope="col">You</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="d-flex flex-column">
+          <div class="calendar" style="font-size:17px;">Jan</div>
+          <div class="calendar" >02</div>
+        </td>
+        <td data-toggle='modal' data-target="#modExpense">NY lunch @Astoria</td>
+        <td class="monetise">Rp 1,830,000</td>
+        <td class="monetiseNeg">Rp -640,000</td>
+      </tr>
+      <tr>
+        <td class="d-flex flex-column">
+          <div class="calendar" style="font-size:17px;">Dec</div>
+          <div class="calendar" >18</div>
+        </td>
+        <td>Xmas dinner wine</td>
+        <td class="monetiseNeg">Rp -750,000</td>
+        <td class="monetise">Rp 2,250,000</td>
+      </tr>
+      <tr>
+        <td class="d-flex flex-column">
+          <div class="calendar" style="font-size:17px;">Dec</div>
+          <div class="calendar" >07</div>
+        </td>
+        <td>Hamptons weekend rent@car</td>
+        <td class="monetise">Rp 1,700,000</td>
+        <td class="monetiseNeg">Rp -550,000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Right Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="height: 100vh;  float: left;">
+  <div class="d-flex flex-column">
+      <div class="p-2">
+        <h4>Your balance</h4>
+      </div>
+      <div class="p-2 total">
+        <h5>Jack owes you</h5>
+        <h3>Rp 1,000,000</h3>
+        <h5>in total</h5>
+      </div>
+  </div>
+</div>
+
+<!-- Modal New Event -->
+<div class="col-md-12">
+  <div class="modal fade" tabindex="-1" role="dialog" id="ModNewEvent" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New expense</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="padding-right: 0px;">
+          <form class="row" #f = "ngForm" (ngSubmit)="onSubmit(f)">  
+            <div class="col-md-6 shadow-right">
+              <div class="form-inline">
+                <label class="col-md-3 justify-content-start">With</label>
+                <input type="text" class="col-md-9 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline">
+                <label class="col-md-3 justify-content-start">Date</label>
+                <input type="date" class="col-md-9 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline">
+                <label class="col-md-3 justify-content-start">Expense</label>
+                <input type="text" class="col-md-9 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline">
+                <img class="col-md-3" style="padding: 0px; object-fit: cover; height: 75px; width: 75px;" src="../../assets/icons/calculator.png">
+                <div class="col-md-9 col" style="padding: 0px;">
+                  <div class="form-inline">
+                    <label class="col-md-4 justify-content-start">Total</label>
+                    <input type="text" class="col-md-8 form-control" name="person" ngModel>
+                  </div>
+                  <div class="form-inline">
+                    <label class="col-md-4 justify-content-start">Paid by</label>
+                    <input type="text" class="col-md-8 form-control" name="person" ngModel>
+                  </div>
+                </div>
+              </div>
+              <div class="form-inline justify-content-around" style="margin-bottom: 20px;">
+                <button type="button" class="col-md-5 btn">Split equally</button>
+                <button type="button" class="col-md-5 btn">Split unequally</button>
+              </div>
+              <div class="form-inline">
+                <label class="col-md-4 justify-content-start">Add notes</label>
+                <textarea class="col-md-8 form-control" rows="3" name="notes" ngModel></textarea>
+              </div>
+              <div class="form-inline">
+                <label class="col-md-4 justify-content-start">Add photos</label>
+                <input type="file" class="col-md-8 form-control-file" style="padding-left: 0px;">
+              </div>
+            </div>
+            <div class="col-md-6 ml-auto shadow-left">
+              <div>
+                <h5 style="margin-bottom: 25px;">Enter each share of expense</h5>
+              </div>
+              <div class="form-inline">
+                <div class="col-md-2">
+                  <img class="miniprofile" src="https://pbs.twimg.com/profile_images/782474226020200448/zDo-gAo0_400x400.jpg" alt="Your Picture Here">
+                </div>
+                <label class="col-md-4 justify-content-start">Elon</label>
+                <label class="col-md-2 justify-content-end">Rp</label>
+                <input type="text" class="col-md-4 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline">
+                <div class="col-md-2">
+                  <img class="miniprofile" src="http://bornwiki.com/bio/sergey-brin.jpg" alt="Your Picture Here">
+                </div>
+                <label class="col-md-4 justify-content-start">Sergey</label>
+                <label class="col-md-2 justify-content-end">Rp</label>
+                <input type="text" class="col-md-4 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline">
+                <div class="col-md-2">
+                  <img class="miniprofile" src="https://i.pinimg.com/736x/af/a9/6c/afa96c8bc36174e32b24130c512f4152--kevin-systrom-instagram-ideas.jpg" alt="Your Picture Here">
+                </div>
+                <label class="col-md-4 justify-content-start">Kevin</label>
+                <label class="col-md-2 justify-content-end">Rp</label>
+                <input type="text" class="col-md-4 form-control" name="person" ngModel>
+              </div>
+              <div class="form-inline" style="margin-top: 25px;">
+                <label class="col-md-6 justify-content-center"><h5 style="margin-bottom: 0px;">Total</h5></label>
+                <label class="col-md-2 justify-content-end">Rp</label>
+                <label class="col-md-4 justify-content-end">500,000</label>
+              </div>
+            </div>              
+          </form>  
+        </div>  
+
+        <!-- Modal Footer -->
+        <div class="modal-footer justify-content-center">
+          <button type="submit" class="col-md-4 btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

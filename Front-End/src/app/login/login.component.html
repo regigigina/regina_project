@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <div class="col-xs-12 col-md-offset-3 col-md-6">
+    
+    <form #f="ngForm" (ngSubmit)="Login(f)">
+
+      <div class="panel panel-default">
+        <div class="panel-heading d-flex justify-content-center">
+          <h3 class="panel-title">Go dutch, no fuss. Log in here.</h3>
+        </div>
+        <div class="panel-body d-flex flex-column" style="margin-top: 25px;">
+          <div class="form-group">
+            <label class="col-xs-3 justify-content-center">Username</label>
+            <div class="col-xs-9 justify-content-center">
+              <input type="text" class="form-control" name="username" ngModel >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-3 justify-content-center">Password</label>
+            <div class="col-xs-9 justify-content-center">
+              <input type="password" class="form-control" style="margin-bottom: 15px;" name="password" ngModel >
+            </div>
+          </div>
+            <button type="submit" class="align-self-center btn btn-default">Log In</button>
+            <a class="align-self-center nav-link active" href="" routerLink="/signup">Don't have an account yet? Sign up here!</a>
+        </div>       
+      </div>
+    </form>
+  </div>
+</div>

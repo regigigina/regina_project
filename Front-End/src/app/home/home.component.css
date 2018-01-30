@@ -1,0 +1,105 @@
+*{
+    margin-right: 0px;
+}
+
+.navbar{
+    background-color: paleturquoise;
+}
+
+.fleft{
+    float: left;
+}
+
+.bg-gray{
+    background-color:rgb(226, 226, 226);
+}
+
+.balance{
+    background-color:lightgray;
+}
+
+.shadow{
+    box-shadow: -8px 0px 10px -10px, 8px 0px 10px -10px;
+    padding: 0px;
+}
+
+.shadow-left{
+    box-shadow: -8px 0px 4px -10px;
+}
+
+.shadow-right{
+    box-shadow: 8px 0px 4px -10px;
+}
+
+.shadow-top{
+    box-shadow: 0px -8px 4px -10px;
+}
+
+.shadow-bottom{
+    box-shadow: 0px 8px 6px -10px;
+}
+
+.profileimg{
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.btn{
+    color: white;
+    background-color: rgb(151, 211, 211);
+}
+
+.navbar-brand{
+    text-shadow: 0ch;
+}
+
+.menuitem{
+    color: rgb(255, 80, 80);
+    padding-top: 10px;
+}
+
+.centrify{
+    text-align: center;
+}
+
+h6{
+    color: rgb(40, 149, 185);
+}
+
+.icon{
+    object-fit: cover;
+    height: 30px;
+    width: 30px;
+}
+
+.bigicon{
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+}
+
+p{
+    margin-bottom: 0px;
+}
+
+.nav{
+    font-size: 18px;
+}
+
+label{
+    text-align: start;
+}
+
+.form-inline{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.miniprofile{
+    object-fit: cover;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}

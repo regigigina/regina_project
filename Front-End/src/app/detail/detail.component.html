@@ -1,0 +1,119 @@
+<!-- Left Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="float: left;">
+  <nav class="nav flex-column" style="margin-top:33px;">
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/dashboard.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/home">Dashboard</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/calculator.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/expenses">Expenses</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/friends.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/accounts">Friends</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Mid Bar -->
+<div class="col-xs-12 col-md-8 shadow" style="height: 100vh; float: left;">
+  <form #d = "ngForm" (ngSubmit)="saveData(d)">
+
+    <!-- User Profile -->
+    <div class="d-flex flex-row align-items-center bg-gray" style="padding-left: 10px;padding-right: 10px;">      
+      <div class="col-md-1 p-2 d-flex flex-row">
+        <img src="../../assets/icons/calculator.png" class="bigicon">             
+      </div>
+      <div class="col-md-5 p-2">
+        <h4>{{entry.expense}}</h4>
+      </div> 
+      <div class="ml-auto p-2">
+        <button type="button" class="btn justify-content-end" (click)="deleteData(entry._id)">Delete</button>
+        <!-- <button type="button" class="btn justify-content-end">Settle</button> -->
+        <button type="submit" class="btn justify-content-end">Save</button>
+        <button type="button" class="btn justify-content-end" routerLink="/expenses">Go Back</button>
+      </div>
+    </div>    
+
+    <!-- Detailed Expense -->
+    <div class="col-md-12" style="margin-top: 25px;">
+      <div class="row"> 
+        <div class="col-md-6 shadow-right">
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">With</label>
+            <input type="text" class="col-md-8 form-control" name="with" value="{{entry.with}}" ngModel>
+          </div>
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Date</label>
+            <input type="date" class="col-md-8 form-control" name="date" value="{{entry.date}}" ngModel>
+          </div>
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Expense</label>
+            <input type="text" class="col-md-8 form-control" name="expense" value="{{entry.expense}}" ngModel>
+          </div>
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Total</label>
+            <input type="text" class="col-md-8 form-control" name="total" value="{{entry.total}}" ngModel>
+          </div>
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Paid by</label>
+            <select class="col-md-8 form-control custom-select" name="paidby" ngModel>
+              <option value="{{entry.with}}">{{entry.with}}</option>
+              <option value="You">You</option>
+            </select>
+          </div>
+          <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Add notes</label>
+            <textarea class="col-md-8 form-control" rows="3" name="notes" value="{{entry.notes}}" ngModel></textarea>
+          </div>
+          <!-- <div class="form-inline">
+            <label class="col-md-4 justify-content-start">Add photos</label>
+            <input type="file" class="col-md-8 form-control-file" style="padding-left: 0px;" name="photo" id="" (change)="fileChange($event)" ngModel>
+          </div> -->
+          <div class="form-inline justify-content-center" style="margin-top: 20px;">
+            <button type="button" class="col-md-5 btn">Split equally</button>
+          </div>
+        </div>
+        <div class="col-md-6 ml-auto shadow-left">
+          <div>
+            <h5 style="margin-bottom: 25px;">Each share of expense</h5>
+          </div>
+            <div class="form-inline">
+              <div class="col-md-2">
+                <img class="miniprofile" src="https://pbs.twimg.com/profile_images/782474226020200448/zDo-gAo0_400x400.jpg" alt="Your Picture Here">
+              </div>
+              <label class="col-md-4 justify-content-start">Elon</label>
+              <label class="col-md-2 justify-content-end">Rp</label>
+              <input type="number" class="col-md-4 form-control" id="user" name="user" value="{{entry.user_share}}" ngModel>
+            </div>
+            <div class="form-inline">
+              <div class="col-md-2">
+                <img class="miniprofile" src="{{friend.profile}}" alt="">
+              </div>
+              <label class="col-md-4 justify-content-start">{{friend.username}}</label>
+              <label class="col-md-2 justify-content-end">Rp</label>
+              <input type="number" class="col-md-4 form-control" id="friend" name="friend" value="{{entry.friend_share}}" ngModel>
+            </div>
+            <div class="form-inline" style="margin-top: 25px;">
+              <label class="col-md-6 justify-content-center"><h5 style="margin-bottom: 0px;">Total</h5></label>
+              <label class="col-md-2 justify-content-end">Rp</label>
+              <p>{{d.value.user + d.value.friend}}</p>
+              <!-- <input class="col-md-4 form-control" name="total" id="total" readonly value=""> -->
+              <!-- <label id="total" class="col-md-4 justify-content-end"></label> -->
+            </div>
+          <div class="d-flex flex-column align-items-center" style="margin-top:25px;">
+            <img class="photo" src="{{entry.photo}}" alt="">
+          </div>
+        </div>              
+      </div>
+    </div>  
+
+  </form>
+  
+</div>
+
+<!-- Right Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="height: 100vh;  float: left;">
+
+</div>

@@ -1,0 +1,74 @@
+<!-- Left Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="float: left;">
+  <nav class="nav flex-column" style="margin-top:33px;">
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/dashboard.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/home">Dashboard</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/calculator.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/expenses">Expenses</a>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      <img src="../../assets/icons/friends.png" class="icon">
+      <a class="nav-link active shadow-bottom" href="" routerLink="/accounts">Friends</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Mid Bar -->
+<div class="col-xs-12 col-md-8 shadow" style="min-height: 100vh; float: left;">
+
+  <!-- Dashboard -->
+  <div class="d-flex flex-row align-items-center bg-gray" style="padding-left: 10px;padding-right: 10px;">      
+    <div class="col-md-1 p-2 d-flex flex-row">
+      <img src="../../assets/icons/calculator.png" class="bigicon">             
+    </div>
+    <div class="col-md-6 p-2">
+      <h4>Expenses</h4> 
+    </div> 
+    
+    <!-- Add New -->
+    <form #w = "ngForm" (ngSubmit)="addnew(w)" class="ml-auto p-2 d-flex flex-row align-items-center">
+      <div class="form-inline" style="margin-bottom:0px;">
+        <label class="col-md-3 justify-content-start">With</label>
+        <select class="col-md-9 form-control custom-select" name="with" ngModel>
+          <option *ngFor="let u of userList, let i = index" value="{{u._id}}">{{u.username}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Add new</button>        
+    </form>  
+    
+  </div>    
+
+  <!-- Accounts Table -->
+  <table class="table">
+    <thead class="bg-gray shadow-top">
+      <tr style="text-align:center;">
+        <th class="tdate" scope="col">Date</th>
+        <th class="texpenses" scope="col">Expenses</th>
+        <th class="tpaidby" scope="col">Paid by</th>
+        <th class="tfriend" scope="col">Your share</th>
+        <th class="tuser" scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of expenseList, let i = index">
+        <td class="d-flex flex-column calendar">
+          {{e.date}}
+          <!-- <div class="calendar" style="font-size:17px;">Jan</div>
+          <div class="calendar" >02</div> -->
+        </td>
+        <td routerLink="/detail/{{e._id}}">{{e.expense}}</td>
+        <td>{{e.paidby}}</td>
+        <td class="monetise">{{e.user_share}}</td>
+        <td class="monetiseNeg">Rp {{e.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Right Bar -->
+<div class="col-xs-12 col-md-2 bg-blue" style="height: 100vh;  float: left;">
+
+</div>
